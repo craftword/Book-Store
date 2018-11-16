@@ -1,37 +1,48 @@
-'use strict';
+import fs from 'fs';
+import path from 'path';
+import Sequelize from 'sequelize';
+import config from '../config/config.js';
 
-const fs = require('fs');
-const path = require('path');
-const Sequelize = require('sequelize');
-const basename = path.basename(__filename);
+const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
+const data = config[env];
+
 const db = {};
 
+// This check the Environment in use whether local and online
+
 let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+
+
+if (data.url) {
+    sequelize = new Sequelize(data.url);
+   
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
+    sequelize = new Sequelize(
+        data.database, data.username, data.password, data
+    );
 }
 
 fs
-  .readdirSync(__dirname)
-  .filter(file => {
-    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
-  })
-  .forEach(file => {
-    const model = sequelize['import'](path.join(__dirname, file));
-    db[model.name] = model;
-  });
+    .readdirSync(__dirname)
+    .filter(file =>
+        (file.indexOf('.') !== 0) &&
+        (file !== basename) &&
+        (file.slice(-3) === '.js'))
+    .forEach(file => {
+
+        const model = sequelize.import(path.join(__dirname, file));
+        //console.log(model);
+        db[model.name] = model;
+    });
 
 Object.keys(db).forEach(modelName => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
-  }
+    if (db[modelName].associate) {
+        db[modelName].associate(db);
+    }
 });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-module.exports = db;
+export default db;

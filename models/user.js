@@ -1,7 +1,7 @@
 "use strict";
 
-const User = (sequelize, DataTypes) => {
-    const User = sequelize.define("User", {
+const Users = (sequelize, DataTypes) => {
+    const Users = sequelize.define("Users", {
         username: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -30,19 +30,15 @@ const User = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        role: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-              
+       
     });
      // class methods
-     User.associate = (models) => {
-       User.hasMany(models.Book, { as: 'Book', foreignKey: 'user_id' });
+     Users.associate = (models) => {
+       Users.hasMany(models.Books, { as: 'Books', foreignKey: 'userId' });
   };    
 
-    return User;
+    return Users;
 };
 
 
-export default User;
+export default Users;
