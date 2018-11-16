@@ -1,0 +1,22 @@
+{
+  "name": "book-store",
+  "version": "1.0.0",
+  "description": "App is built to illustrate my profiencies in use of node, react and mysql",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craftword/Book-Store.git"
+  },
+  "keywords": [
+    "app"
+  ],
+  "author": "Abimola Olaitan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craftword/Book-Store/issues"
+  },
+  "homepage": "https://github.com/craftword/Book-Store#readme"
+}
