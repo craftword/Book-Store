@@ -9,15 +9,5 @@ branches:
 cache:
   directories:
    - "node_modules"
-env:
-  - TEST_DBURL=DATABASE_URL
-
-script:
-  - npm test
-
-
-after_success:
-  - npm run coverage
-
 
 
