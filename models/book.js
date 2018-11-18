@@ -26,7 +26,7 @@ const Books = (sequelize, DataTypes) => {
         },
         thumbnail: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             
         },
         userId: {

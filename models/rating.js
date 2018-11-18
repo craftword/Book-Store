@@ -11,7 +11,7 @@ const Ratings = (sequelize, DataTypes) => {
         allowNull: false,
       },
       rating: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
               

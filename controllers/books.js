@@ -10,6 +10,7 @@ const book = {
                 description: req.body.description,
                 author: req.body.author,
                 dateOfPublication: req.body.dateOfPublication,
+                thumbnail: req.body.thumbnail,
                 userId: req.body.userId,
                        
                                
