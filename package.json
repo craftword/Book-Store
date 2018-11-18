@@ -4,7 +4,9 @@
   "description": "App is built to illustrate my profiencies in use of node, react and mysql",
   "main": "app.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "babel-node": "babel-node --presets=latest",
+    "start": "nodemon --exec npm run babel-node -- ./app"
   },
   "repository": {
     "type": "git",
@@ -18,11 +20,36 @@
   "bugs": {
     "url": "https://github.com/craftword/Book-Store/issues"
   },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
   "homepage": "https://github.com/craftword/Book-Store#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-latest": "^6.24.1",
+    "chai": "^4.1.0",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.11.0",
+    "eslint-plugin-react": "^7.5.1",
+    "istanbul": "^0.4.5",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nodemon": "^1.18.6",
+    "nyc": "^11.3.0",
+    "supertest": "^3.0.0"
+  },
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "morgan": "^1.8.2",
+    "babel-preset-es2015": "^6.24.1",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.3",
+    "chai-http": "^3.0.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mocha": "^4.1.0",
+    "morgan": "^1.9.1",
     "mysql2": "^1.6.4",
     "sequelize": "^4.41.2"
   }

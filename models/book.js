@@ -24,19 +24,28 @@ const Books = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        thumbnail: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            
+        },
         userId: {
           type: DataTypes.INTEGER,
+          references: {
+            model: 'Users',
+            key: 'id'
+          },
           allowNull: false,
       },
               
     });
      // class methods
-      Books.associate = (models) => {
-      Books.belongsTo(models.Users, { foreignKey: 'userId' });
-      Books.hasMany(models.Ratings, { as: 'Ratings', foreignKey: 'bookId' });
-  };    
+    Book.associate = (models) => {
+        Book.belongsTo(models.Users, { foreignKey: 'userId' });
+        Book.hasMany(models.Ratings, { as: 'Ratings', foreignKey: 'bookId' });
+    };    
 
-    return Books;
+    return Book;
 };
 
 
