@@ -11,6 +11,7 @@ const book = {
                 author: req.body.author,
                 dateOfPublication: req.body.dateOfPublication,
                 thumbnail: req.body.thumbnail,
+                url: req.body.url,
                 userId: req.body.userId,
                        
                                

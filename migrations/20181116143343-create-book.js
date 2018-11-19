@@ -23,6 +23,9 @@ module.exports = {
       thumbnail: {
         type: Sequelize.STRING
       },
+      url: {
+        type: Sequelize.STRING
+      },
       userId: {
         type: Sequelize.INTEGER,
         onDelete: "CASCADE",

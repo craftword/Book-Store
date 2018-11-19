@@ -20,7 +20,7 @@ const appApi = (app) => {
     app.delete("/api/v1/books/:Id", auth, book.destroy);
 
     // Ratings Endpoints
-    app.post("/api/v1/books/:Id/rating", auth, rate.create);
+    app.post("/api/v1/books/rating", auth, rate.create);
     
  
 };

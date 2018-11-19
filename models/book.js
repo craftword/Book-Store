@@ -26,6 +26,11 @@ const Books = (sequelize, DataTypes) => {
         },
         thumbnail: {
             type: DataTypes.STRING,
+            allowNull: false,
+            
+        },
+        url: {
+            type: DataTypes.STRING,
             allowNull: true,
             
         },
