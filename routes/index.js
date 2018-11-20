@@ -6,7 +6,7 @@ import rate from "../controllers/ratings";
 
 const appApi = (app) => {
     app.get("/api/v1", (req, res) => res.status(200).send({
-        message: "Welcome to the Owanbe book Manager App!",
+        message: "Welcome to the Book-Store App!",
     }));
     // login and signIn
     app.post("/api/v1/users/", users.create);

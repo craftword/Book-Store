@@ -4,7 +4,7 @@
   "description": "App is built to illustrate my profiencies in use of node, react and mysql",
   "main": "app.js",
   "scripts": {
-    "test": "npm test",
+    "test": "mocha --compilers js:babel-core/register --recursive",
     "babel-node": "babel-node --presets=latest",
     "start": "nodemon --exec npm run babel-node -- ./app"
   },
@@ -45,8 +45,10 @@
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.3",
     "chai-http": "^3.0.0",
+    "child-process-promise": "^2.2.1",
     "dotenv": "^4.0.0",
     "express": "^4.16.4",
+    "faker": "^4.1.0",
     "jsonwebtoken": "^8.4.0",
     "mocha": "^4.1.0",
     "morgan": "^1.9.1",
