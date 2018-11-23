@@ -27,7 +27,6 @@ const users = {
       { 
         if(users) {
           const payload = {
-            role: users.role,
             exp: Math.floor(Date.now() / 1000) + (60 * 60),
             data:users.username
           };
@@ -38,8 +37,7 @@ const users = {
               'fullname':users.fullname,
               'email':users.email,
               'username':users.username,
-              'role':users.role,
-              token: token
+               token: token
 
                         }
                     })
@@ -64,7 +62,6 @@ const users = {
                     bcrypt.compare(req.body.password, hash, (err, doesMatch)=>{
                         if (doesMatch){                           
                             const payload = {
-                                role: user.role,
                                 exp: Math.floor(Date.now() / 1000) + (60 * 60),
                                 data:user.username
                               };
@@ -73,7 +70,6 @@ const users = {
             res.status(200).json({
               success: true,
               message: 'Welcome Home!',
-              role:user.role,
               token: token
             });
         

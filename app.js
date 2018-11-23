@@ -1,7 +1,7 @@
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import express from 'express';
-import http from 'http';
+//import http from 'http';
 import dotenv from 'dotenv';
 
 // load environment
@@ -26,10 +26,11 @@ app.get('*', (req, res) => res.status(200).send({
 
 //Listen to the server
 
-const port = process.env.PORT|| 9000;
+const port = process.env.PORT||8000;
 app.set('port', port);
 
+
 //const server = http.createServer(app);
-app.listen(port);
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 export default app;

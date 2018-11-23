@@ -4,7 +4,9 @@
   "description": "App is built to illustrate my profiencies in use of node, react and mysql",
   "main": "app.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --recursive",
+    "pretest":"sequelize db:migrate --env test",
+    "mocha": "mocha --compilers js:babel-register",
+    "test": "nyc mocha --timeout 250000 test/ --require babel-register --exit",
     "babel-node": "babel-node --presets=latest",
     "start": "nodemon --exec npm run babel-node -- ./app"
   },

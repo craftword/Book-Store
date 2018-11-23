@@ -9,22 +9,30 @@ const Users = (sequelize, DataTypes) => {
                 args: true,
                 msg: 'Username taken! Please enter a new username.'
               },
+            validate: {
+                notEmpty: true,
+            },   
                          
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                notEmpty: true,
+            },   
             
         },
-        fullname: {
-            
+        fullname: {            
             type: DataTypes.STRING,
             allowNull: false,
         },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
-            isEmail: true, 
+            isEmail: true,
+            validate: {
+                notEmpty: true,
+            },    
         },
         phone: {
             type: DataTypes.STRING,
