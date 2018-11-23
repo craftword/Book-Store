@@ -2,8 +2,6 @@ before_script:
   - "mysql -e 'create database sequelize_test;'"
   - npm install sequelize@$(echo $SEQUELIZE)
 
-script:
-  - "node_modules/.bin/gulp"
 
 notifications:
   irc:
@@ -11,7 +9,6 @@ notifications:
 
 env:
   - DIALECT=mysql SEQUELIZE=4.41.2
-  
 
 
 
